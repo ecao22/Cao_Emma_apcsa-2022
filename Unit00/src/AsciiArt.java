@@ -16,7 +16,7 @@ public class AsciiArt
 
 		System.out.println("             ()   ()              " );
 		System.out.println("            =(. v .)=             " );
-		System.out.println("            /(     )\             " );
+		System.out.println("            /(     )\\             " );
 		System.out.println("            _(     )_             " );
 		//add other output
 		System.out.println(" \n\n\n\nHelpFul Hints" );
