@@ -1,9 +1,9 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
+//Name - Emma Cao
+//Date - 1/15/21
+//Class - APCSA
 //Lab  -
 
 public class AsciiBox
@@ -11,7 +11,19 @@ public class AsciiBox
 	public static void main(String[] args)
 	{
 		System.out.println("name \t  date \n\n" );
-		System.out.println("+++++++++++++++++++++++++ " );
+		System.out.println("+++++++++++++++++++++++++");
+		System.out.println("-------------------------");
+		System.out.println("ooooooooooooooooooooooooo");
+		System.out.println("-------------------------");
+		System.out.println("+++++++++++++++++++++++++");
+		System.out.println("-------------------------");
+		System.out.println("ooooooooooooooooooooooooo");
+		System.out.println("-------------------------");
+		System.out.println("+++++++++++++++++++++++++");
+		System.out.println("-------------------------");
+		System.out.println("ooooooooooooooooooooooooo");
+		System.out.println("-------------------------");
+		System.out.println("+++++++++++++++++++++++++");
 
 	}
 }
