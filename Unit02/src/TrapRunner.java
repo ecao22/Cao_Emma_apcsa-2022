@@ -1,7 +1,7 @@
 //© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
+//Name - Emma Cao
+//Date - 1/18/22
+//Class - P. 1
 //Lab  - 
 
 public class TrapRunner
