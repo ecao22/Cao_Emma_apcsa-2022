@@ -1,7 +1,7 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
-//Date -
+//Name - Emma Cao
+//Date - 1/18/22
 
 public class CubeRunner
 {
