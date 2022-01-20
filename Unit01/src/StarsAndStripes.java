@@ -10,7 +10,7 @@ import static java.lang.System.*;
 
 public class StarsAndStripes
 {
-   public void printText()
+   public void starsAndStripes()
    {
       out.println("StarsAndStripes");
       printTwoBlankLines();

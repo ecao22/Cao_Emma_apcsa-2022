@@ -16,7 +16,7 @@ public class StarsRunner
 	   StarsAndStripes painter = new StarsAndStripes();
 	   
       //call the methods needed to make the patterns on the word document
-	   painter.printText();
+	   painter.starsAndStripes();
 	   painter.printASmallBox();
 	   painter.printTwoBlankLines();
 	   painter.printABigBox();
