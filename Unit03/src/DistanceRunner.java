@@ -1,9 +1,9 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
+//Name - Emma Cao
+//Date - 1/19/22
+//Class - P. 1
 //Lab  -
 
 import java.util.Scanner; 
@@ -32,6 +32,8 @@ public class DistanceRunner
 		Distance test = new Distance(x1, y1, x2, y2);
 		test.calcDistance();
 		test.print();
+		
+		System.out.println("Coordinates: " + test);
 		
 		
 			

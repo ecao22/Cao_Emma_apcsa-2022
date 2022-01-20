@@ -1,9 +1,9 @@
 //(c) A+ Computer Science 
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
+//Name - Emma Cao
+//Date - 1/19/22
+//Class - P. 1
 //Lab  -
 
 import java.util.Scanner; 
@@ -17,24 +17,21 @@ public class Distance
 
 	public Distance()
 	{
-		// setCoordinates(0,0,0,0);
+		setCoordinates(0,0,0,0);
 		distance=0.0;
 	}
 
 	public Distance(int x1, int y1, int x2, int y2)
 	{
-		xOne = x1;
-		yOne = y1;
-		xTwo = x2;
-		yTwo = y2;
+		setCoordinates(x1,y1,x2,y2);
 	}
 
 	public void setCoordinates(int x1, int y1, int x2, int y2)
 	{
-		// xOne = x1;
-		// yOne = y1;
-		// xTwo = x2;
-		// yTwo = y2;
+		xOne = x1;
+		yOne = y1;
+		xTwo = x2;
+		yTwo = y2;
 	}
 
 	public void calcDistance()
@@ -56,6 +53,7 @@ public class Distance
 
 	public String toString()
 	{
-		return "";
+		return xOne+ " " +yOne+ " " +xTwo+ " " + yTwo;
+		
 	}
 }
