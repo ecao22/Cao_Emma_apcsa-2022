@@ -1,13 +1,15 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name - 
-//Date -
-//Class -
+//Name - Emma Cao
+//Date - 1/20/22
+//Class - P. 1
 //Lab  -
 
 import static java.lang.System.*;
 import java.util.Scanner;
+
+
 
 public class DiscountRunner
 {
@@ -18,6 +20,9 @@ public class DiscountRunner
 		out.print("Enter the original bill amount :: ");
 		double amt = keyboard.nextDouble();
 		
+
+		System.out.print("Bill after discount :: ");
+		System.out.printf("%.2f",Discount.getDiscountedBill(amt));
 
 	}
 }
