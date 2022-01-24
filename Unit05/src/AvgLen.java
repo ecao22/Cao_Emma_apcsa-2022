@@ -1,12 +1,13 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
-//Date -
+//Name - Emma Cao
+//Date - 1/24/22
 
 public class AvgLen
 {
    public static double go( String a, String b )
 	{
-		return 0;
+	   	int lengthSum = a.length() + b.length();
+		return lengthSum * 0.5;
 	}
 }
