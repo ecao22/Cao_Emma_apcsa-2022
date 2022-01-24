@@ -20,9 +20,9 @@ public class DiscountRunner
 		out.print("Enter the original bill amount :: ");
 		double amt = keyboard.nextDouble();
 		
-
+double test = Discount.getDiscountedBill(amt);
 		System.out.print("Bill after discount :: ");
-		System.out.printf("%.2f",Discount.getDiscountedBill(amt));
-
+		//System.out.printf("%.2f",Discount.getDiscountedBill(amt));
+		System.out.printf("%.2f",test);
 	}
 }
