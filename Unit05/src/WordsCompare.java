@@ -1,9 +1,9 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
+//Name - Emma Cao
+//Date - 1/24/22
+//Class - P. 1
 //Lab  -
 
 import static java.lang.System.*;
@@ -15,19 +15,24 @@ public class WordsCompare
 
 	public WordsCompare()
 	{
+		setWords("", "");
+		compare = 0;
 	}
 
 	public WordsCompare(String one, String two)
 	{
+		setWords(one, two);
 	}
 
 	public void setWords(String one, String two)
 	{
-
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public void compare()
 	{
+		compare = wordOne.compareTo(wordTwo);
 	}
 
 	public String toString()
