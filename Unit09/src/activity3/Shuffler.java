@@ -1,3 +1,4 @@
+package activity3;
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -76,5 +77,6 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		
 	}
 }
