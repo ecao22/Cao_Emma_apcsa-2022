@@ -1,4 +1,6 @@
 package activity3;
+import activity1.Card;
+import activity2.Deck;
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -13,7 +15,7 @@ public class Shuffler {
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 4;
+	private static final int VALUE_COUNT = 8;
 
 	/**
 	 * Tests shuffling methods.
@@ -62,6 +64,23 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		
+		int[] shuffled;
+		shuffled = new int[VALUE_COUNT];
+		int k = 0;
+		for (int j = 0; j < (VALUE_COUNT+1)/2; j++) {
+			shuffled[k] = values[j];
+			k = k+2;
+		}
+		k = 1;
+		for (int j = (VALUE_COUNT+1)/2; j < VALUE_COUNT; j++) {
+			shuffled[k] = values[j];
+			k = k+2;
+		}
+		
+		for (int j = 0; j < VALUE_COUNT; j++) {
+			values[j] = shuffled[j];
+		}
 	}
 
 	/**
@@ -77,6 +96,21 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffled;
+		int shuffledInt;
+		shuffled = new int[VALUE_COUNT];
+		for (int k = VALUE_COUNT-1; k > 0; k--) {
+			int r = (int) (Math.random()*VALUE_COUNT);
+			shuffledInt = values[k];
+			values[k] = values[r];
+			values[r] = values[k];
+			
+			
+		}
 		
+		/* for (int j = 0; j < VALUE_COUNT; j++) {
+			values[j] = shuffled[j];
+		} */
 	}
+		
 }

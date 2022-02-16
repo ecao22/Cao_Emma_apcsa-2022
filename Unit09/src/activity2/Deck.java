@@ -3,6 +3,7 @@ import java.util.List;
 
 import activity1.Card;
 
+
 import java.util.ArrayList;
 
 /**
@@ -75,6 +76,7 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		
 	}
 
 	/**
