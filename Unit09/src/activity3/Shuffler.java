@@ -103,14 +103,11 @@ public class Shuffler {
 			int r = (int) (Math.random()*VALUE_COUNT);
 			shuffledInt = values[k];
 			values[k] = values[r];
-			values[r] = values[k];
+			values[r] = shuffledInt;
 			
 			
 		}
-		
-		/* for (int j = 0; j < VALUE_COUNT; j++) {
-			values[j] = shuffled[j];
-		} */
+
 	}
 		
 }
