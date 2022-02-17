@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Emma Cao
 //Date -
 
 public class SumFirstRunner
