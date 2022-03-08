@@ -1,6 +1,8 @@
 package activity7;
 import java.util.List;
+import activity1.Card;
 import java.util.ArrayList;
+import activity2.Deck;
 
 /**
  * The ElevensBoard class represents the board in a game of Elevens.
