@@ -12,9 +12,23 @@ public class NumberShifter
 {
 	public static int[] makeLucky7Array( int size)
 	{
-		return null;
+		int[] ray = new int[size];
+		for (int i = 0; i < size; i++) {
+			ray[i] = (int)(Math.random()*10);
+		}
+		shiftEm(ray);
+		return ray;
 	}
 	public static void shiftEm(int[] array)
 	{
+		int sevenPos = 0;
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] == 7) {
+				int temp = array[sevenPos];
+				array[sevenPos] = 7;
+				array[i] = temp;
+				sevenPos++;
+			}
+		}
 	}
 }
