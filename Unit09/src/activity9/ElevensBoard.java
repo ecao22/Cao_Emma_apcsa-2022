@@ -1,5 +1,8 @@
+package activity9;
+
 import java.util.List;
 import java.util.ArrayList;
+import activity1.Card;
 
 /**
  * The ElevensBoard class represents the board in a game of Elevens.
@@ -54,6 +57,16 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		if (selectedCards.size() == 2) {
+			return containsPairSum11(selectedCards);
+		}
+		else if (selectedCards.size() == 3) {
+			return containsJQK(selectedCards);
+		}
+		else {
+			return false;
+		}
+		
 	}
 
 	/**
@@ -67,6 +80,10 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean anotherPlayIsPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		
+		List <Integer> Indexes = cardIndexes();
+		return containsPairSum11(Indexes) || containsJQK(Indexes);
+		
 	}
 
 	/**
@@ -79,6 +96,18 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		
+		for (int i = 0; i < selectedCards.size()-1; i++) {
+			for (int j = i + 1; j < selectedCards.size(); j++) {
+				int c1 = selectedCards.get(i).intValue();
+				int c2 = selectedCards.get(j).intValue();
+				if (cardAt(c1).pointValue() + cardAt(c2).pointValue() == 11 ) {
+					return true;
+				}
+			}
+		}
+		return false;
+		
 	}
 
 	/**
@@ -91,5 +120,24 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		
+		boolean jack = false;
+		boolean queen = false;
+		boolean king = false;
+		
+		for (int sc = 0; sc < selectedCards.size(); sc++) {
+			if (cardAt(selectedCards.get(sc).intValue()).rank().equals("jack")) {
+				jack = true;
+			}
+			if (cardAt(selectedCards.get(sc).intValue()).rank().equals("queen")) {
+				queen = true;
+			}
+			if (cardAt(selectedCards.get(sc).intValue()).rank().equals("king")) {
+				king = true;
+			}
+			
+		}
+		return (jack && queen && king);
+		
 	}
 }

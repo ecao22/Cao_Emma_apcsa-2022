@@ -1,3 +1,7 @@
+package activity9;
+
+import activity1.Card;
+
 import java.awt.Point;
 import java.awt.Graphics;
 import java.awt.Dimension;

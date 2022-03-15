@@ -1,4 +1,4 @@
-package activity2;
+package activity9;
 import java.util.List;
 
 import activity1.Card;
@@ -38,8 +38,13 @@ public class Deck {
 		size = ranks.length;
 		cards = new ArrayList<Card>();
 		for (int i = 0; i < size; i++) {
-			cards.add(new Card(ranks[i], suits[i], values[i]));
+			for (int j = 0; j < suits.length; j++) {
+				cards.add(new Card(ranks[i], suits[j], values[i]));
+		
+			}
 		}
+		size = cards.size();
+		shuffle();
 	}
 
 
@@ -73,11 +78,10 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-		ArrayList<String> shuffled;
-		shuffled = new ArrayList<String>();
 		Card shuffledInt;
 		for (int k = size-1; k > 0; k--) {
-			int r = (int) (Math.random()*size);
+			int number = k+1;
+			int r = (int) (Math.random()*number);
 			shuffledInt = cards.get(k);
 			cards.set(k, cards.get(r));
 			cards.set(r, shuffledInt);
