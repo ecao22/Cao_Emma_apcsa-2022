@@ -33,23 +33,30 @@ public class Grid
 						count++;
 					}
 				}
-				
-				if (max < count) {
-					max = count;
-					most = s;
-				}
-				
-				count = 0;
 			}
+			if (max < count) {
+				max = count;
+				most = s;
+			}
+			
+			count = 0;
 		}
 		
 		return most;
 	}
 
 	//returns a count of how many times val occurs in the matrix
-	private int countVals( String val )
+	int countVals( String val )
 	{
-		return 0;
+		int total = 0;
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[i].length; j++) {
+				if (grid[i][j] == val) {
+					total++;
+				}
+			}
+		}
+		return total;
 	}
 
 	//display the grid
