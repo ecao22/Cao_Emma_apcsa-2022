@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name - 
 //Date -
 //Class -
@@ -20,6 +20,12 @@ public class RecursionFunThree
 	 */
 	public static int luckyThrees( long number )
 	{
+		if (number > 12) {
+			if ((number-3)%10 == 0) {
+				return 1 + luckyThrees(number/10);
+			}
+			return 0 + luckyThrees(number/10);
+		}
 		return 0;
 	}
 }
