@@ -12,13 +12,19 @@ public class WordSortTwoRunner
 {
 	public static void main( String args[] ) throws IOException
 	{
-		Scanner file = new Scanner(new File("/Users/emmacao/Desktop/APCSA-2022/Cao_Emma_apcsa-2022/Unit12/src/wordsorttwo.dat"));
+		Scanner file = new Scanner(new File("/Users/emmacao/Desktop/APCSA-2022/Cao_Emma_apcsa-2022/Unit13/src/wordsorttwo.dat"));
 		int size = file.nextInt();
 		file.nextLine();
 		for(int i = 0; i<size; i++)
 		{
 			String sentence = file.nextLine();
 			//instantiate a new WordSort
+			System.out.println(sentence);
+			WordSortTwo test = new WordSortTwo(sentence);
+			test.sort();
+			System.out.println(test + "\n");
+			
+			
 		}
 	}
 }
