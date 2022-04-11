@@ -31,9 +31,9 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	public Pong()
 	{
 		//set up all variables related to the game
-		ball = new Ball(10, 100, 10, 10, Color.blue, 2, 1);
-		leftPaddle = new Paddle(20, 200, 10, 40, Color.orange, 2);
-		rightPaddle = new Paddle(760, 200, 10, 40, Color.orange, 2);
+		ball = new Ball(100, 100, 10, 10, Color.blue, 2, 1);
+		leftPaddle = new Paddle(20, 200, 10, 200, Color.orange, 2);
+		rightPaddle = new Paddle(760, 200, 10, 200, Color.orange, 2);
 
 		keys = new boolean[4];
 		leftScore = 0;
@@ -74,42 +74,134 @@ public class Pong extends Canvas implements KeyListener, Runnable
 		//see if ball hits left wall or right wall
 		if(!(ball.getX()>=10 && ball.getX()<=780))
 		{
-			ball.setXSpeed(0);
-			ball.setYSpeed(0);
+			graphToBack.setColor(Color.white);
+			graphToBack.drawString("left score: " + leftScore + ". right score: " + rightScore, 
+					getWidth()/2-50, 525);
+			
+			
+			if (ball.getX() < 10 && leftScore < 6 && rightScore < 6) {
+				rightScore++;
+			}
+			else if (ball.getX() > 780 && leftScore < 6 && rightScore < 6) {
+				leftScore++;
+			}
+			
+			if (leftScore == 5 || rightScore == 5) {
+				ball.setXSpeed(0);
+				ball.setYSpeed(0);
+				Color old = graphToBack.getColor();
+				graphToBack.setColor(Color.red);
+				graphToBack.drawString("GAME OVER", 350, 200);
+				graphToBack.setColor(old);
+			}
+			
+			Color c = ball.getColor();
+			ball.setColor(Color.WHITE);
+			graphToBack.setColor(Color.WHITE);
+			ball.moveAndDraw(graphToBack);
+			
+			Color old_col = graphToBack.getColor();
+			graphToBack.setColor(Color.red);
+			graphToBack.drawString("left score: " + leftScore + ". right score: " + rightScore, 
+					getWidth()/2-50, 525);
+			graphToBack.setColor(old_col);
+			
+
+			ball.setX(300);
+			ball.setY(300);
+			ball.setColor(c);
+			ball.setXSpeed(ball.getXSpeed());
+			ball.setYSpeed(ball.getYSpeed());
+			
 		}
 
-		
 		//see if the ball hits the top or bottom wall 
-
-
-
+		if(!(ball.getY() >= 10 && ball.getY() <=500)) {
+			ball.setYSpeed(ball.getYSpeed() * -1);
+		}
 
 		//see if the ball hits the left paddle
+		
+		if ( (ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() + Math.abs(ball.getXSpeed())
+		&& ( ball.getY() >= leftPaddle.getY() && ball.getY() <= leftPaddle.getY() + leftPaddle.getHeight() 
+		|| ball.getY() + ball.getHeight() >= leftPaddle.getY() && ball.getY() + ball.getHeight() < 
+		leftPaddle.getY() + leftPaddle.getHeight()))) {
+			
+			if ( ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() - 
+			Math.abs(ball.getXSpeed())) {
+				if (ball.getXSpeed() < 0) {
+					ball.setXSpeed(-ball.getXSpeed());
+				}
+			}
+//			else {
+//				ball.setXSpeed(-ball.getXSpeed());
+//			}
+			
+		}
 		
 		
 		
 		//see if the ball hits the right paddle
 		
-		
+		if ( (ball.getX() + ball.getWidth() >= rightPaddle.getX() + Math.abs(ball.getXSpeed())
+		&& ( ball.getY() >= rightPaddle.getY() && ball.getY() <= rightPaddle.getY() + 
+		rightPaddle.getHeight() || ball.getY() + ball.getHeight() >= rightPaddle.getY() && ball.getY() 
+		+ ball.getHeight() < rightPaddle.getY() + rightPaddle.getHeight()))) {
+			
+			if ( ball.getX() + ball.getWidth() >= rightPaddle.getX() - 
+			Math.abs(ball.getXSpeed())) {
+				if (ball.getXSpeed() > 0) {
+					ball.setXSpeed(-ball.getXSpeed());
+				}
+			}
+//			else {
+//				ball.setXSpeed(-ball.getXSpeed());
+//			}
+			
+		}
 		
 
 
 		//see if the paddles need to be moved
 
 		if (keys[0] == true) {
-			leftPaddle.moveUpAndDraw(graphToBack);
+			
+			if (leftPaddle.getY() > 0) {
+				leftPaddle.moveUpAndDraw(graphToBack);
+			}
+			else { 
+				leftPaddle.setY(0);
+			}
 		}
 		
 		if (keys[1] == true) {
-			leftPaddle.moveDownAndDraw(graphToBack);
+			
+			if (leftPaddle.getY() + leftPaddle.getHeight() < getHeight()) {
+				leftPaddle.moveDownAndDraw(graphToBack);
+			}
+			else {
+				leftPaddle.setY(getHeight());
+			}
 		}
 		
 		if (keys[2] == true) {
-			rightPaddle.moveUpAndDraw(graphToBack);
+
+			if (rightPaddle.getY() > 0) {
+				rightPaddle.moveUpAndDraw(graphToBack);
+			}
+			else { 
+				rightPaddle.setY(0);
+			}
 		}
 		
 		if (keys[3] == true) {
-			rightPaddle.moveDownAndDraw(graphToBack);
+
+			if (rightPaddle.getY() + rightPaddle.getHeight() < getHeight()) {
+				rightPaddle.moveDownAndDraw(graphToBack);
+			}
+			else {
+				rightPaddle.setY(getHeight());
+			}
 		}
 
 		
