@@ -445,8 +445,12 @@ public void mirrorDiagonal()
           leftPixel.setColor(Color.WHITE);
       }
     }
+  }
+  
+  public void edgeDetection2(int edgeDist) {
     Pixel topPixel = null;
     Pixel bottomPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
     Color bottomColor = null;
     for (int row = 0; row < pixels.length-1; row++)
     {

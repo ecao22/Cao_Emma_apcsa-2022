@@ -149,6 +149,7 @@ public class PictureTester
   public static void testCollage()
   {
     Picture canvas = new Picture("/Users/emmacao/Desktop/APCSA-2022/Cao_Emma_apcsa-2022/Unit16/src/images/640x480.jpg");
+    canvas.explore();
     canvas.createCollage();
     canvas.explore();
   }
@@ -157,6 +158,7 @@ public class PictureTester
   public static void testCopy()
   {
     Picture canvas = new Picture("/Users/emmacao/Desktop/APCSA-2022/Cao_Emma_apcsa-2022/Unit16/src/images/640x480.jpg");
+    canvas.explore();
     canvas.createCollage();
     canvas.explore();
   }
@@ -165,6 +167,7 @@ public class PictureTester
   public static void testMyCollage()
   {
     Picture canvas = new Picture("/Users/emmacao/Desktop/APCSA-2022/Cao_Emma_apcsa-2022/Unit16/src/images/640x480.jpg");
+    canvas.explore();
     canvas.createMyCollage();
     canvas.explore();
   }
@@ -175,6 +178,14 @@ public class PictureTester
     Picture swan = new Picture("/Users/emmacao/Desktop/APCSA-2022/Cao_Emma_apcsa-2022/Unit16/src/images/swan.jpg");
     swan.explore();
     swan.edgeDetection(10);
+    swan.explore();
+  }
+  
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("/Users/emmacao/Desktop/APCSA-2022/Cao_Emma_apcsa-2022/Unit16/src/images/swan.jpg");
+    swan.explore();
+    swan.edgeDetection2(10);
     swan.explore();
   }
   
@@ -191,7 +202,7 @@ public class PictureTester
 	//testKeepOnlyGreen();
 	//testNegate();
     //testGrayscale();
-    // testFixUnderwater();
+    //testFixUnderwater();
     //testMirrorVertical();
 	//testMirrorVerticalLeftToRight();
 	//testMirrorHorizontal();
@@ -201,7 +212,6 @@ public class PictureTester
     //testMirrorGull();
     //testMirrorDiagonal();
 	//testCollage();
-	//testCopy();
 	//testMyCollage();
     //testEdgeDetection();
     //testEdgeDetection2();
